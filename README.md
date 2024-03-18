@@ -1,1 +1,1 @@
-# MajorProjectPlanning
+# Major Project Planning
