@@ -2,7 +2,7 @@
 
 # # Global variables to store selected point coordinates
 # selected_point = None
-# resize_factor = 0.25
+# resize_factor = 0.1
 
 # def select_point(event, x, y, flags, param):
 #     global selected_point
@@ -48,7 +48,7 @@
 #         return None
 
 # # Path to your image
-# image_path = "Screenshot (2).png"
+# image_path = "IMG_20240926_224754.jpg"
 
 # # Get the coordinates of the selected point
 # p1 = get_point_coordinates(image_path)
@@ -78,7 +78,7 @@
 # image_width = 2080
 # image_height = 4624
 
-# distance = 0.38 # m
+# distance = 0.365 # m
 
 # sensor_length_mm = 6.26 # mm
 # sensor_length_pixels = image_height
@@ -173,17 +173,17 @@ def get_bounding_box(image_path):
 
 def calculate_object_size(w, h, image_height, focal_length, distance, sensor_length_mm):
     # Object width and height in pixels
-    Object_height_on_sensor_mms = (sensor_length_mm * h) / image_height
-    Object_width_on_sensor_mms = (sensor_length_mm * w) / image_height
+    Object_height_on_sensor_mms = (sensor_length_mm * h ) / (image_height*resize_factor)
+    Object_width_on_sensor_mms = (sensor_length_mm * w) / (image_height*resize_factor)
 
     # Convert object size to meters
-    Object_height_meters = (distance * Object_height_on_sensor_mms) / focal_length
-    Object_width_meters = (distance * Object_width_on_sensor_mms) / focal_length
+    Object_height_meters = (distance * Object_height_on_sensor_mms) / (focal_length)
+    Object_width_meters = (distance * Object_width_on_sensor_mms) / (focal_length)
 
     return Object_height_meters, Object_width_meters
 
 # Path to your image
-image_path = "pic 45-3.JPG"
+image_path = "IMG_20240926_224829.jpg"
 
 # Automatically get the bounding box points and dimensions
 p1, p2, width_pixels, height_pixels = get_bounding_box(image_path)
@@ -194,7 +194,7 @@ if p1 is not None and p2 is not None:
     print("Height (pixels):", height_pixels)
 
     focal_length = 4.7  # mm
-    distance = 0.45  # meters
+    distance = 0.365  # meters
     sensor_length_mm = 6.26  # mm
     image_height = 4624  # in pixels
 
