@@ -13,3 +13,10 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+DimensionDetect(Sheet1).csv
+dis_ultrasonic.ino
+get_coord_img.py
+MajorProject.py
+Sensor_Study.txt
+watershed.py
