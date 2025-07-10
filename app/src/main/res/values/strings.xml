@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">DimDetect</string>
     <string name="AppName">DimDetect</string>
+    <string name="calculate">Calculate</string>
+    <string name="get_distance">Get Distance</string>
 </resources>
