@@ -111,7 +111,6 @@ public class HomeActivity extends AppCompatActivity {
         calcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO : calculate distance between 2 points
                 double calculatedDistance = calculateDistance(distance);
                 String dist = String.format("%.2f", calculatedDistance);
                 AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
